@@ -813,27 +813,6 @@
     </footer>
 
     <script>
-      function toggleVariant() {
-        const a = document.getElementById("variantA");
-        const b = document.getElementById("variantB");
-        const label = document.getElementById("variantLabel");
-        a.classList.toggle("active");
-        b.classList.toggle("active");
-        label.textContent = a.classList.contains("active") ? "B" : "A";
-      }
-
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            target.scrollIntoView({ behavior: "smooth", block: "start" });
-          }
-        });
-      });
-    </script>
-
-    <script>
       const slides = document.querySelectorAll(".hero-slide");
       let currentSlide = 0;
 
@@ -909,7 +888,7 @@
       let confettiInterval;
 
       function isMobile() {
-        return window.innerWidth <= 768; // або використай navigator.userAgent
+        return window.innerWidth <= 768;
       }
 
       function launchConfetti() {
@@ -925,7 +904,6 @@
 
       function startConfetti() {
         if (isMobile()) {
-          // Лише один запуск на мобільних
           launchConfetti();
         } else {
           if (!confettiInterval) {
@@ -987,6 +965,31 @@
 
         window.addEventListener("focus", () => {
           elements.forEach(reveal);
+        });
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const OFFSET = 50;
+        const links = document.querySelectorAll('a[href^="#"]');
+
+        links.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            const targetID = this.getAttribute("href");
+            const target = document.querySelector(targetID);
+
+            if (target) {
+              e.preventDefault();
+              const targetPosition =
+                target.getBoundingClientRect().top + window.scrollY - OFFSET;
+
+              window.scrollTo({
+                top: targetPosition,
+                behavior: "smooth",
+              });
+            }
+          });
         });
       });
     </script>
