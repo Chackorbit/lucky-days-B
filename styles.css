@@ -128,6 +128,8 @@ body {
   background: #999;
 }
 .hero-section {
+  display: flex;
+  min-height: 100vh;
   position: relative;
   overflow: hidden;
   background: linear-gradient(
@@ -140,63 +142,71 @@ body {
   background-size: cover;
 }
 
-.hero-slider {
+.hero-section {
   position: relative;
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  transition: transform 0.5s ease;
-  max-width: 1024px;
-}
-
-.hero-slide {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  opacity: 0;
-  transform: translateX(100%);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  padding: 15px;
-
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  color: #ffffff;
+  padding: 80px 20px;
   text-align: center;
-  pointer-events: none;
+  overflow: hidden;
+}
 
+.hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
   font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.2;
 }
 
-.hero-slide h1 {
+.sub-title {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  font-family: "Open Sans", sans-serif;
+  color: #f2f2f2;
+}
+
+.hero-note {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 10px;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  font-family: "Open Sans", sans-serif;
+}
+
+.hero-cta {
+  display: inline-block;
+  background: #f2b300;
+  color: #000;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
   font-weight: 700;
-}
-.hero-slide.active {
-  opacity: 1;
-  transform: translateX(0%);
-  pointer-events: auto;
-  z-index: 2;
-}
-.hero-slide.active.variantB {
-  opacity: 1;
-  transform: translateX(-100%);
-  pointer-events: auto;
-  z-index: 2;
+  font-size: 1rem;
+  transition: background 0.3s ease;
 }
 
-/* Коли виходить вліво */
-.hero-slide.exit-left {
-  transform: translateX(-100%);
-  opacity: 0;
-  z-index: 1;
+.hero-cta:hover {
+  background: #ffc300;
 }
 
-/* Коли виходить вправо */
-.hero-slide.exit-right {
-  transform: translateX(100%);
-  opacity: 0;
-  z-index: 1;
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+  .sub-title {
+    font-size: 1rem;
+  }
+  .hero-note {
+    font-size: 0.95rem;
+  }
 }
 
 .hero-nav {
@@ -282,11 +292,7 @@ p {
   color: var(--text);
   margin-bottom: 1rem;
 }
-.hero-note {
-  font-size: 0.9rem;
-  color: #fff;
-  font-weight: 700;
-}
+
 .offers {
   padding: 15px 0;
   text-align: center;
