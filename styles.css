@@ -202,8 +202,24 @@ body {
   margin-bottom: 1.5rem;
   line-height: 1.6;
   font-family: "Open Sans", sans-serif;
-  color: #ff6767;
+  color: #ff1c1c;
   font-weight: bold;
+}
+
+.formatted-labour-day {
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.blue-text {
+  color: #00c4cc;
+}
+
+.red-text {
+  color: #ff1c1c;
 }
 
 /* Mobile */
