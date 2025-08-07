@@ -194,6 +194,17 @@ body {
 .hero-cta:hover {
   background: #ffc300;
 }
+.hero-note {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 10px;
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-family: "Open Sans", sans-serif;
+  color: #ff6767;
+  font-weight: bold;
+}
 
 /* Mobile */
 @media (max-width: 768px) {
