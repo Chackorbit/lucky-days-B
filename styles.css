@@ -164,7 +164,7 @@ body {
 
 .sub-title {
   font-size: 1.2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 10px;
   font-family: "Open Sans", sans-serif;
   color: #f2f2f2;
 }
@@ -213,7 +213,11 @@ body {
   text-align: center;
   line-height: 1.6;
 }
-
+.yellow-text {
+  font-size: 32px;
+  color: #ffcc00;
+  margin: 0;
+}
 .blue-text {
   color: #00c4cc;
 }
@@ -232,6 +236,9 @@ body {
   }
   .hero-note {
     font-size: 0.95rem;
+  }
+  .yellow-text {
+    font-size: 22px;
   }
 }
 
